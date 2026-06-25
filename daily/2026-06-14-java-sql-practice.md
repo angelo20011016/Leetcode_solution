@@ -1,24 +1,40 @@
 # 2026-06-14
 
-## Java Problem
+## Java Problems
 
-- Number: 27
-- Title: Remove Element
+### 27. Remove Element
+
 - Link: https://leetcode.com/problems/remove-element/
 - Difficulty: Easy
 - Language: Java
 - Attempt type: guided practice
 
-## SQL Problem
+### 234. Palindrome Linked List
 
-- Number: 610
-- Title: Triangle Judgement
+- Link: https://leetcode.com/problems/palindrome-linked-list/
+- Difficulty: Easy
+- Language: Java
+- Attempt type: guided practice
+
+## SQL Problems
+
+### 610. Triangle Judgement
+
 - Link: https://leetcode.com/problems/triangle-judgement/
 - Difficulty: Easy
 - Language: SQL
 - Attempt type: guided practice
 
+### 1757. Recyclable and Low Fat Products
+
+- Link: https://leetcode.com/problems/recyclable-and-low-fat-products/
+- Difficulty: Easy
+- Language: SQL
+- Attempt type: guided practice
+
 ## Java Thinking
+
+### Remove Element
 
 這題跟昨天的「把答案寫回陣列前面」很像。
 
@@ -44,7 +60,23 @@
 
 最後回傳 `2`，代表前兩格 `[2, 2]` 是答案。
 
-## Java Pattern
+### Palindrome Linked List
+
+We need to check whether a linked list reads the same forward and backward.
+
+The efficient linked-list pattern is:
+
+1. Use `slow` and `fast` pointers to find the middle.
+2. Reverse the second half of the list.
+3. Compare the first half with the reversed second half.
+
+For odd-length lists, `slow` lands on the middle node. Including that middle node
+in the reversed second half is still fine because the middle value compares with
+itself.
+
+## Java Patterns
+
+### Remove Element
 
 ```java
 int writeIndex = 0;
@@ -59,7 +91,35 @@ for (int readIndex = 0; readIndex < nums.length; readIndex++) {
 return writeIndex;
 ```
 
+### Palindrome Linked List
+
+```java
+ListNode slow = head;
+ListNode fast = head;
+
+while (fast != null && fast.next != null) {
+    slow = slow.next;
+    fast = fast.next.next;
+}
+
+ListNode secondHalf = reverseList(slow);
+ListNode firstHalf = head;
+
+while (secondHalf != null) {
+    if (firstHalf.val != secondHalf.val) {
+        return false;
+    }
+
+    firstHalf = firstHalf.next;
+    secondHalf = secondHalf.next;
+}
+
+return true;
+```
+
 ## SQL Thinking
+
+### Triangle Judgement
 
 三條邊要能組成三角形，任兩邊相加都要大於第三邊。
 
@@ -76,7 +136,15 @@ SQL 裡可以用 `CASE` 做判斷：
 - 條件成立時回傳 `'Yes'`
 - 否則回傳 `'No'`
 
-## SQL Pattern
+### Recyclable and Low Fat Products
+
+We only need rows where both flags are `Y`.
+
+Because both conditions must be true, use `AND`, not `OR`.
+
+## SQL Patterns
+
+### Triangle Judgement
 
 ```sql
 SELECT
@@ -90,16 +158,29 @@ SELECT
 FROM Triangle;
 ```
 
+### Recyclable and Low Fat Products
+
+```sql
+SELECT product_id
+FROM Products
+WHERE low_fats = 'Y' AND recyclable = 'Y';
+```
+
 ## Complexity
 
-- Java time: O(n)
-- Java space: O(1)
-- SQL concept: `CASE` + triangle inequality
+- Remove Element time: O(n)
+- Remove Element space: O(1)
+- Palindrome Linked List time: O(n)
+- Palindrome Linked List space: O(1)
+- SQL concept: `CASE`, triangle inequality, `WHERE`, and `AND`
 
 ## Mistakes To Avoid
 
 - Java: 相等於 `val` 的數字是跳過，不是把它設成 0。
 - Java: 不管有沒有寫入，`readIndex` 都會繼續往右走。
 - Java: 回傳的是保留下來的元素數量 `k`，不是被刪掉的數量。
+- Java: Do not compare node references; compare `val`.
+- Java: Save `nextNode` before changing `current.next` while reversing.
 - SQL: 三個不等式都要成立，所以要用 `AND`。
 - SQL: 條件要是大於 `>`，不是大於等於 `>=`。
+- SQL: Do not use `OR`, because that would include products that satisfy only one condition.

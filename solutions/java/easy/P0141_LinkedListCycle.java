@@ -5,6 +5,7 @@
  */
 public class P0141_LinkedListCycle {
     public boolean hasCycle(ListNode head) {
+        // Time: O(n), Space: O(1)
         ListNode slow = head;
         ListNode fast = head;
 
@@ -24,15 +25,18 @@ public class P0141_LinkedListCycle {
         P0141_LinkedListCycle solution = new P0141_LinkedListCycle();
 
         ListNode first = buildList(new int[] {3, 2, 0, -4});
-        first.next.next.next.next = first.next;
-        System.out.println(solution.hasCycle(first)); // Expected: true
+        connectTailTo(first, 1);
+        System.out.println(solution.hasCycle(first));
+        // Expected: true
 
         ListNode second = buildList(new int[] {1, 2});
-        second.next.next = second;
-        System.out.println(solution.hasCycle(second)); // Expected: true
+        connectTailTo(second, 0);
+        System.out.println(solution.hasCycle(second));
+        // Expected: true
 
         ListNode third = buildList(new int[] {1});
-        System.out.println(solution.hasCycle(third)); // Expected: false
+        System.out.println(solution.hasCycle(third));
+        // Expected: false
     }
 
     private static ListNode buildList(int[] values) {
@@ -45,6 +49,31 @@ public class P0141_LinkedListCycle {
         }
 
         return dummy.next;
+    }
+
+    private static void connectTailTo(ListNode head, int index) {
+        if (head == null || index < 0) {
+            return;
+        }
+
+        ListNode target = null;
+        ListNode current = head;
+        ListNode tail = null;
+        int currentIndex = 0;
+
+        while (current != null) {
+            if (currentIndex == index) {
+                target = current;
+            }
+
+            tail = current;
+            current = current.next;
+            currentIndex++;
+        }
+
+        if (tail != null) {
+            tail.next = target;
+        }
     }
 
     static class ListNode {
