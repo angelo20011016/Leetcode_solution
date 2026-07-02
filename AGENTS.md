@@ -43,6 +43,13 @@ Use clear explanations suitable for a beginner. Prefer concrete examples over ab
   algorithm, important state changes, and conditions that are easy to
   misunderstand. Explain why the code is needed instead of translating every
   line mechanically.
+- Prefer beginner-readable code over compact code. For conditions that may be
+  hard to read, split the logic into clearly named boolean variables or helper
+  methods instead of nesting calls with negation in one line.
+- In Java solutions, avoid writing dense expressions such as
+  `!Character.isLetterOrDigit(s.charAt(left))` directly inside a loop condition
+  when a named variable like `leftCharIsNotLetterOrDigit` would make the idea
+  clearer.
 - For SQL solutions, include the problem link, table shape, goal, concept, and final query.
 - For Python solutions, add or update focused tests under `tests/` when promoting a reviewed solution.
 - Keep edits scoped to the requested practice problem and related index/note files.
@@ -62,3 +69,5 @@ Use clear explanations suitable for a beginner. Prefer concrete examples over ab
 - If the user asks for an explanation, explain the reasoning step by step in Traditional Chinese.
 - Start from the intuition, then show the code/query, then point out common mistakes.
 - If the user says they do not understand, switch to a smaller example before continuing.
+- When explaining code, rewrite dense expressions into smaller named steps first,
+  then connect those steps back to the original code.
