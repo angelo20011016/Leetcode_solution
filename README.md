@@ -33,6 +33,7 @@ scripts/new_problem.py   Creates a daily note and solution template
 | 35 | [Search Insert Position](https://leetcode.com/problems/search-insert-position/) | Easy | [Python](solutions/python/easy/p0035_search_insert_position.py) |
 | 66 | [Plus One](https://leetcode.com/problems/plus-one/) | Easy | [Java](solutions/java/easy/P0066_PlusOne.java) |
 | 88 | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) | Easy | [Java](solutions/java/easy/P0088_MergeSortedArray.java) |
+| 118 | [Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/) | Easy | [Java](solutions/java/easy/P0118_PascalsTriangle.java) |
 | 121 | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | Easy | [Python](solutions/python/easy/p0121_best_time_to_buy_and_sell_stock.py) |
 | 125 | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | Easy | [Java](solutions/java/easy/P0125_ValidPalindrome.java) |
 | 136 | [Single Number](https://leetcode.com/problems/single-number/) | Easy | [Python](solutions/python/easy/p0136_single_number.py) |
@@ -57,6 +58,7 @@ scripts/new_problem.py   Creates a daily note and solution template
 | 977 | [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) | Easy | [Java](solutions/java/easy/P0977_SquaresOfASortedArray.java) |
 | 1068 | [Product Sales Analysis I](https://leetcode.com/problems/product-sales-analysis-i/) | Easy | [SQL](solutions/sql/easy/p1068_product_sales_analysis_i.sql) |
 | 1148 | [Article Views I](https://leetcode.com/problems/article-views-i/) | Easy | [SQL](solutions/sql/easy/p1148_article_views_i.sql) |
+| 1251 | [Average Selling Price](https://leetcode.com/problems/average-selling-price/) | Easy | [SQL](solutions/sql/easy/p1251_average_selling_price.sql) |
 | 1683 | [Invalid Tweets](https://leetcode.com/problems/invalid-tweets/) | Easy | [SQL](solutions/sql/easy/p1683_invalid_tweets.sql) |
 | 1757 | [Recyclable and Low Fat Products](https://leetcode.com/problems/recyclable-and-low-fat-products/) | Easy | [SQL](solutions/sql/easy/p1757_recyclable_and_low_fat_products.sql) |
 
