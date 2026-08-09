@@ -107,3 +107,32 @@ GROUP BY v.customer_id;
 - Java: 迴圈裡要先檢查 `index >= 0`，避免字串全是空白時讀到非法位置。
 - SQL: 不要用 `INNER JOIN`，因為沒有交易的拜訪會被直接丟掉。
 - SQL: `WHERE t.transaction_id IS NULL` 要放在 join 之後，用來篩出沒有交易的拜訪。
+
+## Additional SQL Problem
+
+- Number: 586
+- Title: Customer Placing the Largest Number of Orders
+- Link: https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/
+- Difficulty: Easy
+- Language: SQL
+- Attempt type: light practice
+
+### Main Idea
+
+把同一位客戶的訂單分成一組，用 `COUNT(*)` 算每組訂單數；訂單數最多的客戶排在最前面，只取第一筆。
+
+### Core Query
+
+```sql
+SELECT customer_number
+FROM Orders
+GROUP BY customer_number
+ORDER BY COUNT(*) DESC
+LIMIT 1;
+```
+
+### SQL Concept and Mistakes to Avoid
+
+- `GROUP BY customer_number`：把同一位客戶的訂單放在同一組。
+- `ORDER BY COUNT(*) DESC`：訂單數最多的客戶要排第一。
+- `LIMIT 1`：只回傳第一名的客戶編號。

@@ -30,6 +30,7 @@ scripts/new_problem.py   Creates a daily note and solution template
 | 20 | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | Easy | [Python](solutions/python/easy/p0020_valid_parentheses.py) / [Java](solutions/java/easy/P0020_ValidParentheses.java) |
 | 26 | [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/) | Easy | [Java](solutions/java/easy/P0026_RemoveDuplicatesFromSortedArray.java) |
 | 27 | [Remove Element](https://leetcode.com/problems/remove-element/) | Easy | [Java](solutions/java/easy/P0027_RemoveElement.java) |
+| 28 | [Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) | Easy | [Java](solutions/java/easy/P0028_FindTheIndexOfTheFirstOccurrenceInAString.java) |
 | 35 | [Search Insert Position](https://leetcode.com/problems/search-insert-position/) | Easy | [Python](solutions/python/easy/p0035_search_insert_position.py) |
 | 58 | [Length of Last Word](https://leetcode.com/problems/length-of-last-word/) | Easy | [Java](solutions/java/easy/P0058_LengthOfLastWord.java) |
 | 66 | [Plus One](https://leetcode.com/problems/plus-one/) | Easy | [Java](solutions/java/easy/P0066_PlusOne.java) |
